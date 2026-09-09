@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Provider from "./provider";
+
+import { ThemeProvider } from "@/components/layout/theme-provider";
+import Header from "@/components/layout/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,10 +31,18 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <body className="min-h-screen antialiased">
-        <Provider>
-          {children}
-        </Provider>
+      <body className="min-h-screen antialiased  w-full h-screen ">
+     
+         <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Header/>
+            {children}
+          </ThemeProvider>
+
       </body>
     </html>
   );
