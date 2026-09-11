@@ -10,13 +10,17 @@ export default function Header() {
 
          <header className="bg-background dark:bg-foreground text-foreground dark:text-background">
 
+            {/* Navigation Links */}
             <nav>
                 <ul>
+                    <li>
+                        <Link href={'/'}>Home</Link>
+                    </li>
                     <li>
                         <Link href={'/components'}>Components</Link>
                     </li>
                     <li>
-                        <Link href={'/'}>Home</Link>
+                        <Link href={'/docs'}>Docs</Link>
                     </li>
                 </ul>
             </nav>
