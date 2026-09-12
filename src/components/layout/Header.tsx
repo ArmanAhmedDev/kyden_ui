@@ -45,36 +45,52 @@ export default function Header() {
                 </nav>
 
                 {/* Hamburger Menu */}
-            {/* Hamburger Menu */}
-<button
-  type="button"
-  onClick={() => settoggleMenu((prev) => !prev)}
-  className="block md:hidden"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="32"
-    height="32"
-    viewBox="0 0 256 256"
-    fill="currentColor"
-  >
-    <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z" />
-  </svg>
-</button>
+                {/* Hamburger Menu */}
+                <button
+                    type="button"
+                    onClick={() => settoggleMenu((prev) => !prev)}
+                    className="block md:hidden"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 256 256"
+                        fill="currentColor"
+                    >
+                        <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z" />
+                    </svg>
+                </button>
 
-{/* Side Menu */}
-{toggleMenu && (
+                {/* Side Menu */}
+                {toggleMenu && (
 
-    <>
-    <button className="dark:text-white text-black z-60" onClick={() => settoggleMenu((prev) => !prev)}>
-        close
-    </button>
-    
-  <aside className="fixed left-0 top-0 z-50 h-screen w-70 bg-background dark:bg-foreground">
-    
-  </aside>
-    </>
-)}
+                    <>
+                        <button className="dark:text-white text-black z-60 absolute top-5 left-5" onClick={() => settoggleMenu((prev) => !prev)}>
+                            close
+                        </button>
+
+                        <aside className="fixed left-0 top-0 z-50 h-screen w-70 bg-background dark:bg-foreground">
+                            <ul className="text-2xl pt-20 py-3 pl-6">
+                                <li className="pb-3">
+                                    <Link onClick={() => settoggleMenu((prev) => !prev)} href={'/'}>
+                                        Home
+                                    </Link>
+                                </li>
+                                <li className="pb-3">
+                                    <Link onClick={() => settoggleMenu((prev) => !prev)} href={'/components'}>
+                                        Components
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link onClick={() => settoggleMenu((prev) => !prev)} href={'/docs'}>
+                                        Docs
+                                    </Link>
+                                </li>
+                            </ul>
+                        </aside>
+                    </>
+                )}
 
                 {/* Right Side Navbar */}
                 <div className="flex items-center gap-2 sm:gap-6 md:gap-5">
