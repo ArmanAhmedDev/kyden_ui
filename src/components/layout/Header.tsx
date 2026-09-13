@@ -20,7 +20,7 @@ export default function Header() {
                         <li>
                             <Link
                                 href="/"
-                                className="block rounded-md p-2 transition-colors duration-200 hover:bg-[#efeded] dark:hover:bg-[#2f2e2e]"
+                                className="block rounded-md p-2 transition-colors duration-200 hover:bg-hover-background dark:hover:bg-[#2f2e2e]"
                             >
                                 Home
                             </Link>

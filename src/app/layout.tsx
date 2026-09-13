@@ -28,7 +28,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={` ${outfit.variable}`}
     >
-      <body className="min-h-screen w-full antialiased">
+      <body className="min-h-screen w-full antialiased bg-background dark:bg-foreground">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
