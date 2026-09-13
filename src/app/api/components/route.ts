@@ -1,5 +1,6 @@
 import connectToDb from "../../../../lib/db";
 import Component from "@/features/components/models/components.models";
+import { NextResponse } from "next/server";
 
 export async function POST() {
   try {
@@ -67,27 +68,15 @@ export default function Badge({ children }: { children: React.ReactNode }) {
   }
 }
 
-
 export async function GET() {
+
   try {
     await connectToDb();
-
     const components = await Component.find({});
 
-    return Response.json({
-      message: "Components fetched successfully",
-      data: components,
-    });
+    return NextResponse.json({ success: true, data: components, }, { status: 200 });
   } catch (error) {
-    console.error("Error fetching components:", error);
-
-    return Response.json(
-      {
-        message: "Failed to fetch components",
-      },
-      {
-        status: 500,
-      }
-    );
+    console.error("GET /api/components error:", error);
+    return NextResponse.json({ success: false, message: "Failed to fetch components", }, { status: 500 });
   }
 }
