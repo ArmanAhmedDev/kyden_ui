@@ -11,6 +11,9 @@ const ComponentsSchema = new mongoose.Schema({
     },
     tsxCode:{
         type:String
+    },
+    preview:{
+        type:String
     }
 
 },{timestamps:true})
